@@ -4,6 +4,7 @@ import com.bhawna.SpringBoot.Security_app.entities.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.Date;
 import java.util.Set;
 
 @Service
+
 public class JwtService {
 
     @Value("${jwt.secretKey}")
@@ -31,6 +33,8 @@ public class JwtService {
                 .expiration(new Date(System.currentTimeMillis() + 1000*60*60))
                 .signWith(getSecretKey())
                 .compact();
+
+
     }
 
     public Long getUserIdFromToken(String token){
