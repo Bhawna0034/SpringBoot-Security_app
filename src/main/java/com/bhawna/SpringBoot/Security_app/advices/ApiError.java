@@ -13,6 +13,7 @@ public class ApiError {
     private HttpStatus status;
 
     public ApiError(String error, HttpStatus status) {
+        this();
         this.error = error;
         this.status = status;
     }
