@@ -27,7 +27,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     private final UserService userService;
 
     @Autowired
-    @Qualifier("handlerExceptionResolver")
+    @Qualifier(value = "handlerExceptionResolver")
     private HandlerExceptionResolver handlerExceptionResolver;
 
     @Override
